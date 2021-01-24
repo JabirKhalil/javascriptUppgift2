@@ -6,17 +6,22 @@ const Activity = ({activity,activities, setActivities}) => {
             setActivities(activities.filter(item => item.id !== activity.id))
     }
 
+  
+
+
     const activeHandler = () => {
             setActivities(activities.map(item =>{
                 if(item.id === activity.id){
                     return {
                         ...item, status: !item.status
+                        
                     }
                 }
                 return item
             }))
     }
 
+    
 
     return (
         <div >
@@ -26,11 +31,20 @@ const Activity = ({activity,activities, setActivities}) => {
                 <div className="d-flex justify-content-between align-items-center">
                     <div>
                         <div className="name" >{activity.name}</div>
-                        <div className="status">{activity.status}</div>
+                        <div className="">
+                            <div className={` ${ activity.status ? 'hideDiv' : 'showDiv' }`} >Not active</div>
+                            <div className={` ${ activity.status ? 'showDiv' : 'hideDiv' }`}>Active</div>
+                        </div>
+                        
+                        
+
+                    
+
+
                     </div>
                     <div>
                         <i onClick={activeHandler} className={ `far fa-calendar-times cp ${ activity.status ? 'an-active' : 'in-active' }`}></i>
-                        <i onClick={deleteHandler} className="fas fa-trash cp"></i>
+                        <i onClick={deleteHandler} className="fas fa-trash text-dark cp"></i>
                     </div>
                 </div>
             

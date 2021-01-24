@@ -1,6 +1,6 @@
 #activity{
     font-size: 1.1rem;
-    color: gray;
+   
 }
 
 #activity .name{
@@ -8,10 +8,17 @@
     color: black;
 }
 
-#activity .status{
+.showDiv{
+    display: inline;
+    color: rgb(60, 24, 219);
     font-size: 0.8rem;
- 
 }
+
+.hideDiv{
+    display: none;
+    
+}
+ 
 #activity i{
     margin-left: 1.3rem;
     font-size: 1.1em;
@@ -26,5 +33,5 @@
 color: red;
 }
 .an-active{
-    color: green;
+    color: rgb(24, 219, 24);
 }
